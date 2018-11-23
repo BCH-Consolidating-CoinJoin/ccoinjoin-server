@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Prep 'sudo' commands.
+echo 'password' | sudo -S pwd
+
+# Make keys directory readable
+sudo chmod 755 -R keys
