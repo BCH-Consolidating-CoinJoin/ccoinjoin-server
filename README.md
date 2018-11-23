@@ -17,7 +17,7 @@ Future improvements to be made:
 - Add a front end web browser interface with QR codes for easy scanning by smart phone apps.
 
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/BCH-Consolidating-CoinJoin/consolidating-coinjoin.svg)](https://greenkeeper.io/)
 
 
 ## Requirements
