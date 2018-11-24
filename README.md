@@ -4,7 +4,7 @@ This is an API server forked from this [koa boilerplate](https://github.com/chri
 *Disclaimer*: It is the opinion of some educated people that a server running this software on BCH mainnet may be subject to USA money transmission laws. Other educated people disagree with that opinion ([source](https://twitter.com/christroutner/status/1064334027203653633)). No effort has been expended to research the legality of the this software, that is the responsibility of the end user. This software is intended to only run on testnet, as a proof-of-concept of how software can be used to protect individual sovereignty and defend against government overreach.
 
 Version 1.1.1 is a proof-of-concept prototype. This version will be refactored,
-tests will be added, and functionality iterated upon.
+tests will be added, and functionality iterated upon
 
 Future improvements to be made:
 - Configure production server as a hidden service on the Tor network.
