@@ -1,10 +1,10 @@
 # Consolidating CoinJoin
-This is an API server forked from this [koa boilerplate](https://github.com/christroutner/babel-free-koa2-api-boilerplate). It implements the Consolidating CoinJoin [described here](https://gist.github.com/christroutner/457b99b8033fdea5ae565687e6360323). It works with this [BCH command-line wallet](https://github.com/BCH-Consolidating-CoinJoin/bch-cli-wallet).
+This is an API server forked from this [koa boilerplate](https://github.com/christroutner/babel-free-koa2-api-boilerplate). It implements the [Consolidating CoinJoin protocol](https://gist.github.com/christroutner/457b99b8033fdea5ae565687e6360323). It works with this [BCH command-line wallet](https://github.com/BCH-Consolidating-CoinJoin/ccoinjoin-wallet).
 
 *Disclaimer*: It is the opinion of some educated people that a server running this software on BCH mainnet may be subject to USA money transmission laws. Other educated people disagree with that opinion ([source](https://twitter.com/christroutner/status/1064334027203653633)). No effort has been expended to research the legality of the this software, that is the responsibility of the end user. This software is intended to only run on testnet, as a proof-of-concept of how software can be used to protect individual sovereignty and defend against government overreach.
 
-Version 1.1.1 is a proof-of-concept prototype. This version will be refactored,
-tests will be added, and functionality iterated upon.
+Efforts are currently under way to allow users to run this server as a tor hidden service (with a .onion address). If you'd like to know more, feel free to ask for a status update on [this Discord channel](https://discord.gg/GXur7m9)
+
 
 Future improvements to be made:
 - Configure production server as a hidden service on the Tor network.
@@ -17,7 +17,15 @@ Future improvements to be made:
 - Add a front end web browser interface with QR codes for easy scanning by smart phone apps.
 
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/BCH-Consolidating-CoinJoin/consolidating-coinjoin.svg)](https://greenkeeper.io/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
+[![Build Status](https://travis-ci.org/BCH-Consolidating-CoinJoin/consolidating-coinjoin.svg?branch=master)](https://travis-ci.org/BCH-Consolidating-CoinJoin/consolidating-coinjoin)
+
+
+[![Coverage Status](https://coveralls.io/repos/github/BCH-Consolidating-CoinJoin/consolidating-coinjoin/badge.svg?branch=master)](https://coveralls.io/github/BCH-Consolidating-CoinJoin/consolidating-coinjoin?branch=master)
+
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/BCH-Consolidating-CoinJoin/consolidating-coinjoin.svg)](https://greenkeeper.io/)
 
 
 ## Requirements
@@ -34,22 +42,21 @@ Installation is different depending on if you want to create a *development* ser
 - `npm start` to run a development server.
 
 ### Production
-This server requires a Mongo database, so it uses Docker Compose to run in production.
+This server requires a Mongo database, and runs over tor by default, so it uses Docker Compose to run in production.
 [This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 shows how to setup Docker.
 [This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 shows how to setup Docker Compose. Here are some commands to build and run this
 application with Docker Compose:
 
-- `docker-compose build --no-cache` will build the Docker container from scratch.
-  If previously used, this will fail without first deleting the `database` folder,
-  which is created with root privileges by Docker, so it must be deleted with the
-  command `sudo rm -rf database`.
+- `./rebuild-image` will build the Docker container from scratch.
 
 - `docker-compose up -d` will run the server in the background (daemon mode).
   The server attaches to port 5000 on the host by default.
 
-It is assumed that a production server will have nginx sitting in front of the docker containers. Nginx will serve static content, handle SSL, and proxy API calls to the docker container on port 5000.
+By default, the server connects to the tor network and broadcasts its .onion address on the IPFS network.
+
+It is assumed that a production server will have nginx sitting in front of the docker containers when running the server on the regular internet. Nginx will serve static content, handle SSL, and proxy API calls to the docker container on port 5000.
 
 
 ## Structure
@@ -76,8 +83,6 @@ It is assumed that a production server will have nginx sitting in front of the d
 
 ## Usage
 * `npm start` Start server on live mode
-* `npm run dev` Start server on dev mode with nodemon
-* `npm run docs` Generate API documentation
 * `npm test` Run mocha tests
 
 ## License
