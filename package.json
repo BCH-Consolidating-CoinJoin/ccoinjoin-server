@@ -1,5 +1,5 @@
 {
-  "name": "consolidating-coinjoin",
+  "name": "ccoinjoin-server",
   "version": "1.0.0",
   "description": "koa API server implementing Consolidating CoinJoin",
   "main": "index.js",
@@ -26,10 +26,10 @@
   "author": "Chris Troutner <chris.troutner@gmail.com>",
   "license": "MIT",
   "apidoc": {
-    "title": "consolidating-coinjoin",
+    "title": "ccoinjoin-server",
     "url": "localhost:5000"
   },
-  "repository": "BCH-Consolidating-CoinJoin/consolidating-coinjoin",
+  "repository": "BCH-Consolidating-CoinJoin/ccoinjoin-server",
   "dependencies": {
     "apidoc": "^0.17.7",
     "bch-cli-wallet": "^1.1.0",
