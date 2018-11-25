@@ -49,7 +49,7 @@ shows how to setup Docker.
 shows how to setup Docker Compose. Here are some commands to build and run this
 application with Docker Compose:
 
-- `./rebuild-image` will build the Docker container from scratch.
+- `./rebuild-image` will build the Docker container from scratch
 
 - `docker-compose up -d` will run the server in the background (daemon mode).
   The server attaches to port 5000 on the host by default.
