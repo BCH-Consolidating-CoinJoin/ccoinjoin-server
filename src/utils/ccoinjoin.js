@@ -9,8 +9,8 @@ const Participant = require('../models/participant')
 const wlogger = require(`./logging`)
 
 // Wallet functionality
-const SendAll = require('bch-cli-wallet/src/commands/send-all')
-const appUtil = require(`bch-cli-wallet/src/util`)
+const SendAll = require('ccoinjoin-wallet/src/commands/send-all')
+const appUtil = require(`ccoinjoin-wallet/src/util`)
 
 const util = require('util')
 util.inspect.defaultOptions = { depth: 3 }

@@ -1,5 +1,5 @@
 const Participant = require('../../models/participant')
-const GetAddress = require('bch-cli-wallet/src/commands/get-address')
+const GetAddress = require('ccoinjoin-wallet/src/commands/get-address')
 const wlogger = require(`../../utils/logging`)
 
 // Used for error logging.

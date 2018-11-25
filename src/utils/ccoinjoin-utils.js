@@ -10,8 +10,8 @@ const Participant = require('../models/participant')
 const wlogger = require(`./logging`)
 
 // Wallet functionality
-const CreateWallet = require('bch-cli-wallet/src/commands/create-wallet')
-const appUtil = require('bch-cli-wallet/src/util')
+const CreateWallet = require('ccoinjoin-wallet/src/commands/create-wallet')
+const appUtil = require('ccoinjoin-wallet/src/util')
 
 const FILENAME = process.env.FILENAME ? process.env.FILENAME : `${__dirname}/../../wallets/wallet.json`
 const ACTIVE_WALLET = process.env.ACTIVE_WALLET ? process.env.ACTIVE_WALLET : `${__dirname}/../../wallets/active-wallet.json`
@@ -81,7 +81,7 @@ async function checkBalance (BITBOX, updateBalance) {
 // Update the satoshisReceived field in the participants model.
 async function validateSatoshisRecieved (newWalletInfo, round, BITBOX) {
   // Dev Assumption: There is only 1 UTXO in the address. This should be valid
-  // if the user is using an appropriate wallet (bch-cli-wallet)
+  // if the user is using an appropriate wallet (ccoinjoin-wallet)
   try {
     wlogger.debug(`entering validateSatoshisRecieved()`)
     wlogger.debug(`newWalletInfo: ${util.inspect(newWalletInfo)}`)
