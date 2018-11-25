@@ -14,8 +14,8 @@ const cCoinJoinUtils = require('../src/utils/ccoinjoin-utils')
 const wlogger = require('../src/utils/logging')
 
 // Wallet functionality
-const CreateWallet = require('bch-cli-wallet/src/commands/create-wallet')
-const UpdateBalance = require('bch-cli-wallet/src/commands/update-balances')
+const CreateWallet = require('ccoinjoin-wallet/src/commands/create-wallet')
+const UpdateBalance = require('ccoinjoin-wallet/src/commands/update-balances')
 
 const config = require('../config')
 const errorMiddleware = require('../src/middleware')
