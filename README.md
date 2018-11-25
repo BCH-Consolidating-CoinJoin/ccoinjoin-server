@@ -67,7 +67,7 @@ It is assumed that a production server will have nginx sitting in front of the d
 │   ├── env                  # Environment specific config
 │   │   ├── common.js
 │   │   ├── development.js
-│   │   ├── production.js
+│   │   ├── production.js    # Customize YOUR server settings here.
 │   │   └── test.js
 │   ├── index.js             # Config entrypoint - exports config according to envionrment and commons
 │   └── passport.js          # Passportjs config of strategies
@@ -82,8 +82,9 @@ It is assumed that a production server will have nginx sitting in front of the d
 ```
 
 ## Usage
-* `npm start` Start server on live mode
+* `npm start` Start server in development mode
 * `npm test` Run mocha tests
+* `docker-compose up` Run server in production mode
 
 ## License
 MIT
