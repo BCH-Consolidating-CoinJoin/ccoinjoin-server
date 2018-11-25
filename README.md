@@ -3,7 +3,7 @@ This is an API server forked from this [koa boilerplate](https://github.com/chri
 
 *Disclaimer*: It is the opinion of some educated people that a server running this software on BCH mainnet may be subject to USA money transmission laws. Other educated people disagree with that opinion ([source](https://twitter.com/christroutner/status/1064334027203653633)). No effort has been expended to research the legality of the this software, that is the responsibility of the end user. This software is intended to only run on testnet, as a proof-of-concept of how software can be used to protect individual sovereignty and defend against government overreach.
 
-Efforts are currently under way to allow users to run this server as a tor hidden service (with a .onion address). If you'd like to know more, feel free to ask for a status update on [the BITBOX Discord channel](https://discord.gg/m5h28ND)
+Efforts are currently under way to allow users to run this server as a tor hidden service (with a .onion address). If you'd like to know more, feel free to ask for a status update on [this Discord channel](https://discord.gg/GXur7m9)
 
 
 Future improvements to be made:
@@ -17,7 +17,15 @@ Future improvements to be made:
 - Add a front end web browser interface with QR codes for easy scanning by smart phone apps.
 
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/BCH-Consolidating-CoinJoin/consolidating-coinjoin.svg)](https://greenkeeper.io/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
+[![Build Status](https://travis-ci.org/BCH-Consolidating-CoinJoin/consolidating-coinjoin.svg?branch=master)](https://travis-ci.org/BCH-Consolidating-CoinJoin/consolidating-coinjoin)
+
+
+[![Coverage Status](https://coveralls.io/repos/github/BCH-Consolidating-CoinJoin/consolidating-coinjoin/badge.svg?branch=master)](https://coveralls.io/github/BCH-Consolidating-CoinJoin/consolidating-coinjoin?branch=master)
+
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/BCH-Consolidating-CoinJoin/consolidating-coinjoin.svg)](https://greenkeeper.io/)
 
 
 ## Requirements
