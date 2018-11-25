@@ -42,22 +42,21 @@ Installation is different depending on if you want to create a *development* ser
 - `npm start` to run a development server.
 
 ### Production
-This server requires a Mongo database, so it uses Docker Compose to run in production.
+This server requires a Mongo database, and runs over tor by default, so it uses Docker Compose to run in production.
 [This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 shows how to setup Docker.
 [This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04)
 shows how to setup Docker Compose. Here are some commands to build and run this
 application with Docker Compose:
 
-- `docker-compose build --no-cache` will build the Docker container from scratch.
-  If previously used, this will fail without first deleting the `database` folder,
-  which is created with root privileges by Docker, so it must be deleted with the
-  command `sudo rm -rf database`.
+- `./rebuild-image` will build the Docker container from scratch.
 
 - `docker-compose up -d` will run the server in the background (daemon mode).
   The server attaches to port 5000 on the host by default.
 
-It is assumed that a production server will have nginx sitting in front of the docker containers. Nginx will serve static content, handle SSL, and proxy API calls to the docker container on port 5000.
+By default, the server connects to the tor network and broadcasts its .onion address on the IPFS network.
+
+It is assumed that a production server will have nginx sitting in front of the docker containers when running the server on the regular internet. Nginx will serve static content, handle SSL, and proxy API calls to the docker container on port 5000.
 
 
 ## Structure
@@ -84,8 +83,6 @@ It is assumed that a production server will have nginx sitting in front of the d
 
 ## Usage
 * `npm start` Start server on live mode
-* `npm run dev` Start server on dev mode with nodemon
-* `npm run docs` Generate API documentation
 * `npm test` Run mocha tests
 
 ## License
