@@ -20,10 +20,11 @@ const UpdateBalance = require('ccoinjoin-wallet/src/commands/update-balances')
 const config = require('../config')
 const errorMiddleware = require('../src/middleware')
 
-let torUtil, p2pdb
+let torUtil
+// let p2pdb
 if (config.env !== 'test') {
   torUtil = require('../src/utils/tor')
-  p2pdb = require('../src/utils/orbitdb')
+  // p2pdb = require('../src/utils/orbitdb')
 }
 
 // SERVER CONFIGURATION
@@ -149,6 +150,6 @@ async function getTorHostname () {
 
     clearInterval(torInterval)
 
-    p2pdb.broadcastHostname(hostname)
+    // p2pdb.broadcastHostname(hostname)
   }
 }
