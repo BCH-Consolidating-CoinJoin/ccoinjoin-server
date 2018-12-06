@@ -9,6 +9,7 @@ const mount = require('koa-mount')
 const serve = require('koa-static')
 const cors = require('kcors')
 const cCoinJoinUtils = require('../src/utils/ccoinjoin-utils')
+const rp = require('request-promise')
 
 // Winston logger
 const wlogger = require('../src/utils/logging')
@@ -114,6 +115,8 @@ async function startServer () {
   console.log(`Server started on ${config.port}`)
   wlogger.info(`Server started on ${config.port}`)
 
+  await submitToMirror()
+
   // Periodically check the balance of server's wallet
   setInterval(function () {
     const updateBalance = new UpdateBalance()
@@ -133,6 +136,23 @@ async function startServer () {
 // module.exports = app
 module.exports = {
   startServer
+}
+
+// Submit the CCoinJoin server information to the mirror server.
+async function submitToMirror () {
+  // console.log(`config.serverData: ${JSON.stringify(config.serverData, null, 2)}`)
+  const options = {
+    method: 'POST',
+    uri: `http://localhost:47890/ccservers`,
+    // resolveWithFullResponse: true,
+    json: true,
+    body: {
+      serverData: config.serverData
+    }
+  }
+
+  const result = await rp(options)
+  console.log(`result: ${JSON.stringify(result, null, 2)}`)
 }
 
 // Called periodically to attempt to get the tor hostname.
