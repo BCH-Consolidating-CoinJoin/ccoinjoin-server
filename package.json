@@ -36,7 +36,7 @@
     "ccoinjoin-wallet": "^1.2.2",
     "glob": "^7.0.0",
     "ipfs": "^0.33.1",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "8.4.0",
     "kcors": "^2.2.1",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
