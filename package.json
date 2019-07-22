@@ -48,7 +48,7 @@
     "koa-router": "^7.0.1",
     "koa-static": "^5.0.0",
     "mongoose": "^5.3.12",
-    "orbit-db": "^0.19.9",
+    "orbit-db": "^0.21.4",
     "passport-local": "^1.0.0",
     "request": "^2.85.0",
     "request-promise": "^4.2.2",
